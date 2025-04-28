@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup-task
+spec:
+  steps:
+    - name: cleanup
+      image: busybox  # A simple Linux container image
+      script: |
+        #!/bin/bash
+        echo "Cleaning up resources..."
+        # Example cleanup commands (remove temporary files, etc.)
+        rm -rf /tmp/*
+        echo "Cleanup completed!"
